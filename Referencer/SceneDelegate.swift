@@ -12,7 +12,8 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    let driver = Driver(driverName: "Daniel Ricciardo", driverNationality: "Australian", driverTeam: "Renault", driverRaceStarts: 177, driverRaceWins: 7, driverPolePositions: 3, driverFastestLaps: 11, driverLapsCompleted: 9230, driverCareerPoints: 1040)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        let contentView = ContentView(driver: driver)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
