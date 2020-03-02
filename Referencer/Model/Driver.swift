@@ -6,7 +6,7 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
-class Driver {
+struct Driver {
     
     let driverName: String
     let driverNationality: String
