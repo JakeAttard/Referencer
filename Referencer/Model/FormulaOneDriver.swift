@@ -8,6 +8,7 @@
 
 import Foundation
 
+// FormulaOneDriver Struct with key properties needed to display driver stats.
 struct FormulaOneDriver: Identifiable {
     
     var id = UUID()

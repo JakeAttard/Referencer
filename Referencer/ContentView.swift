@@ -12,6 +12,8 @@ struct ContentView: View {
     
     let formulaOneDriver: FormulaOneDriver
     
+    // Variables for the labels used to help display data
+    let country = "Country:"
     let currentTeam = "Current Team:"
     let championships = "Titles:"
     let raceWins = "Race Wins:"
@@ -42,8 +44,9 @@ struct ContentView: View {
                     .padding(.bottom, 10.0)
                 
                 HStack {
+                    // Text Labels positioned on the left
                     VStack(alignment: .trailing, spacing: 10.0) {
-                        Text("Country:")
+                        Text(country)
                             .fontWeight(.regular).italic()
                             .multilineTextAlignment(.center)
                         
@@ -83,6 +86,7 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                     }
                     
+                    // Text Labels positioned on the right
                     VStack(alignment: .leading, spacing: 10.0) {
                         Text(formulaOneDriver.formulaOneDriverNationality)
                         .fontWeight(.regular).italic()
@@ -138,6 +142,7 @@ struct ContentView: View {
         }
     }
 
+// ContentView to display data with the in-built simulator
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(formulaOneDriver: FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431))
