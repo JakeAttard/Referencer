@@ -12,17 +12,29 @@ import Foundation
 struct FormulaOneDriver: Identifiable {
     
     var id = UUID()
+    // Formula One Driver Image
     let formulaOneDriverImage: String
+    // Formula One Driver Name
     let formulaOneDriverName: String
+    // Formula One Driver Nationality
     let formulaOneDriverNationality: String
+    // Formula One Driver Team
     let formulaOneDriverTeam: String
+    // Formula One Driver Championships
     let formulaOneDriverChampionships: Int
+    // Formula One Driver Race Starts
     let formulaOneDriverRaceStarts: Int
+    // Formula One Driver Race Wins
     let formulaOneDriverRaceWins: Int
+    // Formula One Driver Podiums
     let formulaOneDriverPodiums: Int
+    // Formula One Driver Pole Positions
     let formulaOneDriverPolePositions: Int
+    // Formula One Driver Fastest Laps
     let formulaOneDriverFastestLaps: Int
+    // Formula One Driver Laps Completed
     let formulaOneDriverLapsCompleted: Int
+    // Formula One Driver Career Points
     let formulaOneDriverCareerPoints: Int
     
     init(formulaOneDriverImage: String, formulaOneDriverName: String, formulaOneDriverNationality: String, formulaOneDriverTeam: String, formulaOneDriverChampionships: Int, formulaOneDriverRaceStarts: Int, formulaOneDriverRaceWins: Int, formulaOneDriverPodiums: Int, formulaOneDriverPolePositions: Int, formulaOneDriverFastestLaps: Int, formulaOneDriverLapsCompleted: Int, formulaOneDriverCareerPoints: Int) {
