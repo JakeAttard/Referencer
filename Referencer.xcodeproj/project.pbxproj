@@ -15,7 +15,7 @@
 		B005D056240C82D800C6AAB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B005D054240C82D800C6AAB6 /* LaunchScreen.storyboard */; };
 		B005D061240C82D800C6AAB6 /* ReferencerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005D060240C82D800C6AAB6 /* ReferencerTests.swift */; };
 		B005D06C240C82D800C6AAB6 /* ReferencerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005D06B240C82D800C6AAB6 /* ReferencerUITests.swift */; };
-		B0B6F7E4240CACBA00FB57D2 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6F7E3240CACBA00FB57D2 /* Driver.swift */; };
+		B0B6F7E4240CACBA00FB57D2 /* FormulaOneDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6F7E3240CACBA00FB57D2 /* FormulaOneDriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		B005D067240C82D800C6AAB6 /* ReferencerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReferencerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B005D06B240C82D800C6AAB6 /* ReferencerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencerUITests.swift; sourceTree = "<group>"; };
 		B005D06D240C82D800C6AAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0B6F7E3240CACBA00FB57D2 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		B0B6F7E3240CACBA00FB57D2 /* FormulaOneDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneDriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 		B0B6F7E2240CAC3B00FB57D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B0B6F7E3240CACBA00FB57D2 /* Driver.swift */,
+				B0B6F7E3240CACBA00FB57D2 /* FormulaOneDriver.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 				B005D04A240C82D600C6AAB6 /* AppDelegate.swift in Sources */,
 				B005D04C240C82D600C6AAB6 /* SceneDelegate.swift in Sources */,
 				B005D04E240C82D600C6AAB6 /* ContentView.swift in Sources */,
-				B0B6F7E4240CACBA00FB57D2 /* Driver.swift in Sources */,
+				B0B6F7E4240CACBA00FB57D2 /* FormulaOneDriver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,123 +10,136 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var driver: Driver
+    let formulaOneDriver: FormulaOneDriver
     
     let currentTeam = "Current Team:"
-    let team = "Renault"
-    let raceStarts = "Race Starts"
+    let championships = "Titles:"
     let raceWins = "Race Wins:"
+    let podiums = "Podiums:"
     let polePositions = "Pole Positions:"
-    let fastestLaps = "Fastest Laps"
-    let lapsCompleted = "Laps Completed"
+    let raceStarts = "Race Starts:"
+    let fastestLaps = "Fastest Laps:"
+    let lapsCompleted = "Laps Completed:"
     let careerPoints = "Career Points:"
+    let disclaimer = "Disclaimer: Images taken from formula1.com website."
     
     var body: some View {
         
         VStack {
-            Image("projectImage")
-                .resizable()
-                .frame(width: 300.0, height: 300.0)
-                .clipShape(Circle())
-                .shadow(radius: 10)
-                .scaledToFit()
+            Group {
+                Image(formulaOneDriver.formulaOneDriverImage)
+                    .resizable()
+                    .frame(width: 300.0, height: 300.0)
+                    .clipShape(Circle())
+                    .shadow(radius: 10)
+                    .scaledToFit()
+
                 
-                    
-            Text(driver.driverName)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-                .font(.title)
-                .padding(.bottom, 10.0)
-            
-            Text(driver.driverNationality)
-                .fontWeight(.regular).italic()
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 20.0)
-                
-            
-            HStack {
-                Text(currentTeam)
+                Text(formulaOneDriver.formulaOneDriverName)
                     .fontWeight(.bold)
-
-
-                Text(driver.driverTeam)
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
-            }
-            .padding(.bottom, 10.0)
-
-            HStack {
-                Text(raceStarts)
-                .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-
-                Text(String(driver.driverRaceStarts))
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
+                    .font(.title)
+                    .padding(.bottom, 10.0)
+                
+                HStack {
+                    VStack(alignment: .trailing, spacing: 10.0) {
+                        Text("Country:")
+                            .fontWeight(.regular).italic()
+                            .multilineTextAlignment(.center)
+                        
+                        Text(currentTeam)
+                            .fontWeight(.bold)
+                        
+                        Text(championships)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(raceWins)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(podiums)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(polePositions)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(raceStarts)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(fastestLaps)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(lapsCompleted)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(careerPoints)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 10.0) {
+                        Text(formulaOneDriver.formulaOneDriverNationality)
+                        .fontWeight(.regular).italic()
+                        .multilineTextAlignment(.center)
+                        
+                        Text(formulaOneDriver.formulaOneDriverTeam)
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(String(formulaOneDriver.formulaOneDriverChampionships))
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(String(formulaOneDriver.formulaOneDriverRaceWins))
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(String(formulaOneDriver.formulaOneDriverPodiums))
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(String(formulaOneDriver.formulaOneDriverPolePositions))
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(String(formulaOneDriver.formulaOneDriverRaceStarts))
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(String(formulaOneDriver.formulaOneDriverFastestLaps))
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(String(formulaOneDriver.formulaOneDriverLapsCompleted))
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                        
+                        Text(String(formulaOneDriver.formulaOneDriverCareerPoints))
+                        .fontWeight(.light)
+                        .multilineTextAlignment(.center)
+                    }
+                }.padding(.bottom, 10.0)
             }
-            .padding(.bottom, 10.0)
-
-            HStack {
-                Text(raceWins)
-                .fontWeight(.bold)
+                
+                HStack {
+                    Text(disclaimer)
+                    .fontWeight(.light)
+                    .font(.system(size: 12))
                     .multilineTextAlignment(.center)
-
-                Text(String(driver.driverRaceWins))
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
+                }
+                .padding(.top, 25.0)
             }
-            .padding(.bottom, 10.0)
-
-            HStack {
-                Text(polePositions)
-                .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-
-                Text(String(driver.driverPolePositions))
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
-            }
-            .padding(.bottom, 10.0)
-
-            HStack {
-                Text(fastestLaps)
-                .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-
-                Text(String(driver.driverFastestLaps))
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
-            }
-            .padding(.bottom, 10.0)
-
-            HStack {
-                Text(lapsCompleted)
-                .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-
-                Text(String(driver.driverLapsCompleted))
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
-            }
-            .padding(.bottom, 10.0)
-
-            HStack {
-                Text(careerPoints)
-                .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-
-                Text(String(driver.driverCareerPoints))
-                .fontWeight(.light)
-                .multilineTextAlignment(.center)
-            }
-            .padding(.bottom, 10.0)
         }
-
     }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(driver: Driver(driverName: "Daniel Ricciardo", driverNationality: "Australian", driverTeam: "Renault", driverRaceStarts: 177, driverRaceWins: 7, driverPolePositions: 3, driverFastestLaps: 11, driverLapsCompleted: 9230, driverCareerPoints: 1040))
+        ContentView(formulaOneDriver: FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431))
     }
 }
