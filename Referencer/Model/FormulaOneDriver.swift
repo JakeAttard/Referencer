@@ -1,11 +1,11 @@
-//
+/**
 //  Driver.swift
 //  Referencer
 //
 //  Created by Jake Attard on 2/3/20.
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
-
+*/
 import Foundation
 
 // FormulaOneDriver Struct with key properties needed to display driver stats.
@@ -28,7 +28,7 @@ struct FormulaOneDriver: Identifiable {
     let formulaOneDriverRaceWins: Int
     // Formula One Driver Podiums
     let formulaOneDriverPodiums: Int
-    // Formula One Driver Pole Positions
+    /// Formula One Driver Pole Positions
     let formulaOneDriverPolePositions: Int
     // Formula One Driver Fastest Laps
     let formulaOneDriverFastestLaps: Int
