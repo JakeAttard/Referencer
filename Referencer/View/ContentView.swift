@@ -24,6 +24,7 @@ struct ContentView: View {
     let lapsCompleted = "Laps Completed:"
     let careerPoints = "Career Points:"
     let disclaimer = "Disclaimer: Images taken from formula1.com website."
+    @State public var notes: String = ""
     
     var body: some View {
         
@@ -137,36 +138,17 @@ struct ContentView: View {
                     .font(.system(size: 12))
                     .multilineTextAlignment(.center)
                 }
-                .padding(.top, 25.0)
+            
+            TextField("Notes: \(notes)", text: $notes)
             }
         }
     }
-
-struct ListView: View {
-    
-    let formulaOneDrivers: [FormulaOneDriver]
-    
-    var body: some View {
-    
-        NavigationView {
-            List(formulaOneDrivers) { formulaOneDriver in
-                NavigationLink(destination: ContentView(formulaOneDriver: formulaOneDriver)) {
-                    Section {
-                        Image(formulaOneDriver.formulaOneDriverImage).resizable().frame(width: 50, height: 50).clipShape(Circle()).shadow(radius: 10).scaledToFit()
-                        Text(formulaOneDriver.formulaOneDriverName)
-                        Text(formulaOneDriver.formulaOneDriverTeam).fontWeight(.light).italic().padding(.leading).frame(maxWidth: .infinity, alignment: .trailing)
-                    }
-                }.navigationBarTitle(Text("Formula 1 Driver Stats"), displayMode: .inline)
-            }
-        }
-    }
-}
 
 // ContentView using ListView to display data with the in-built simulator
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ListView(formulaOneDrivers: [
-            FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431)
-            ])
+        FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431)
+        ])
     }
 }
