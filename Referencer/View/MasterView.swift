@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct MasterView: View {
     
     let formulaOneDrivers: [FormulaOneDriver]
     
@@ -16,7 +16,7 @@ struct ListView: View {
     
         NavigationView {
             List(formulaOneDrivers) { formulaOneDriver in
-                NavigationLink(destination: ContentView(formulaOneDriver: formulaOneDriver)) {
+                NavigationLink(destination: DetailView(formulaOneDriver: formulaOneDriver)) {
                     Section {
                         Image(formulaOneDriver.formulaOneDriverImage).resizable().frame(width: 50, height: 50).clipShape(Circle()).shadow(radius: 10).scaledToFit()
                         Text(formulaOneDriver.formulaOneDriverName)
@@ -25,13 +25,5 @@ struct ListView: View {
                 }.navigationBarTitle(Text("Formula 1 Driver Stats"), displayMode: .inline)
             }
         }
-    }
-}
-
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListView(formulaOneDrivers: [
-        FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431)
-        ])
     }
 }

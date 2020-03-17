@@ -9,9 +9,8 @@
 import Foundation
 
 // FormulaOneDriver Struct with key properties needed to display driver stats.
-struct FormulaOneDriver: Identifiable {
+class FormulaOneDriver: Identifiable {
     
-    var id = UUID()
     // Formula One Driver Image
     let formulaOneDriverImage: String
     // Formula One Driver Name
