@@ -9,7 +9,7 @@
 import Foundation
 
 // FormulaOneDriver Struct with key properties needed to display driver stats.
-class FormulaOneDriver: Identifiable {
+class FormulaOneDriver: ObservableObject, Identifiable {
     
     // Formula One Driver Image
     let formulaOneDriverImage: String
@@ -35,6 +35,9 @@ class FormulaOneDriver: Identifiable {
     let formulaOneDriverLapsCompleted: Int
     // Formula One Driver Career Points
     let formulaOneDriverCareerPoints: Int
+    
+    // FOrmula One Driver Note
+    @Published var formulaOneDriverNote: String = ""
     
     init(formulaOneDriverImage: String, formulaOneDriverName: String, formulaOneDriverNationality: String, formulaOneDriverTeam: String, formulaOneDriverChampionships: Int, formulaOneDriverRaceStarts: Int, formulaOneDriverRaceWins: Int, formulaOneDriverPodiums: Int, formulaOneDriverPolePositions: Int, formulaOneDriverFastestLaps: Int, formulaOneDriverLapsCompleted: Int, formulaOneDriverCareerPoints: Int) {
         self.formulaOneDriverImage = formulaOneDriverImage

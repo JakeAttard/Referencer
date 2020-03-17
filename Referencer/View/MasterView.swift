@@ -10,13 +10,13 @@ import SwiftUI
 
 struct MasterView: View {
     
-    let formulaOneDrivers: [FormulaOneDriver]
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
     
         NavigationView {
-            List(formulaOneDrivers) { formulaOneDriver in
-                NavigationLink(destination: DetailView(formulaOneDriver: formulaOneDriver)) {
+            List(viewModel.formulaOneDrivers) { formulaOneDriver in
+                NavigationLink(destination: DetailView(model: formulaOneDriver)) {
                     Section {
                         Image(formulaOneDriver.formulaOneDriverImage).resizable().frame(width: 50, height: 50).clipShape(Circle()).shadow(radius: 10).scaledToFit()
                         Text(formulaOneDriver.formulaOneDriverName)

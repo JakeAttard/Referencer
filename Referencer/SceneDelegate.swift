@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        let contentView = MasterView(formulaOneDrivers: [
+        let contentView = MasterView(viewModel: ViewModel(formulaOneDrivers: [
                     
             // Formula One Drivers
                     
@@ -81,7 +81,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     
             // Nicholas Latifi
             FormulaOneDriver(formulaOneDriverImage: "nicholasL", formulaOneDriverName: "Nicholas Latifi", formulaOneDriverNationality: "Canada", formulaOneDriverTeam: "Williams", formulaOneDriverChampionships: 0, formulaOneDriverRaceStarts: 0, formulaOneDriverRaceWins: 0, formulaOneDriverPodiums: 0, formulaOneDriverPolePositions: 0, formulaOneDriverFastestLaps: 0, formulaOneDriverLapsCompleted: 0, formulaOneDriverCareerPoints: 0)
-                ])
+                ]))
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

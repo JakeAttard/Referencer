@@ -9,7 +9,7 @@
 import SwiftUI
 struct DetailView: View {
     
-    let formulaOneDriver: FormulaOneDriver
+    @ObservedObject var model: FormulaOneDriver
     
     // Variables for the labels used to help display data
     let country = "Country:"
@@ -27,9 +27,11 @@ struct DetailView: View {
     
     var body: some View {
         
+        GeometryReader { geometry in
+        
         VStack {
             Group {
-                Image(formulaOneDriver.formulaOneDriverImage)
+                Image(self.model.formulaOneDriverImage)
                     .resizable()
                     .frame(width: 300.0, height: 300.0)
                     .clipShape(Circle())
@@ -37,7 +39,7 @@ struct DetailView: View {
                     .scaledToFit()
 
                 
-                Text(formulaOneDriver.formulaOneDriverName)
+                Text(self.model.formulaOneDriverName)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .font(.title)
@@ -46,99 +48,134 @@ struct DetailView: View {
                 HStack {
                     // Text Labels positioned on the left
                     VStack(alignment: .trailing, spacing: 10.0) {
-                        Text(country)
+                        Text(self.country)
                             .fontWeight(.regular).italic()
                             .multilineTextAlignment(.center)
+                            .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(currentTeam)
+                        Text(self.currentTeam)
                             .fontWeight(.bold)
+                            .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(championships)
+                        Text(self.championships)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(raceWins)
+                        Text(self.raceWins)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(podiums)
+                        Text(self.podiums)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(polePositions)
+                        Text(self.polePositions)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(raceStarts)
+                        Text(self.raceStarts)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(fastestLaps)
+                        Text(self.fastestLaps)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(lapsCompleted)
+                        Text(self.lapsCompleted)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(careerPoints)
+                        Text(self.careerPoints)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
                     }
                     
                     // Text Labels positioned on the right
                     VStack(alignment: .leading, spacing: 10.0) {
-                        Text(formulaOneDriver.formulaOneDriverNationality)
+                        Text(self.model.formulaOneDriverNationality)
                         .fontWeight(.regular).italic()
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(formulaOneDriver.formulaOneDriverTeam)
+                        Text(self.model.formulaOneDriverTeam)
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(formulaOneDriver.formulaOneDriverChampionships))
+                        Text(String(self.model.formulaOneDriverChampionships))
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(formulaOneDriver.formulaOneDriverRaceWins))
+                        Text(String(self.model.formulaOneDriverRaceWins))
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(formulaOneDriver.formulaOneDriverPodiums))
+                        Text(String(self.model.formulaOneDriverPodiums))
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(formulaOneDriver.formulaOneDriverPolePositions))
+                        Text(String(self.model.formulaOneDriverPolePositions))
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(formulaOneDriver.formulaOneDriverRaceStarts))
+                        Text(String(self.model.formulaOneDriverRaceStarts))
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(formulaOneDriver.formulaOneDriverFastestLaps))
+                        Text(String(self.model.formulaOneDriverFastestLaps))
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(formulaOneDriver.formulaOneDriverLapsCompleted))
+                        Text(String(self.model.formulaOneDriverLapsCompleted))
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(formulaOneDriver.formulaOneDriverCareerPoints))
+                        Text(String(self.model.formulaOneDriverCareerPoints))
                         .fontWeight(.light)
                         .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
+                    }
+                    
+                }.padding(.bottom, 10.0)
+                
+                HStack {
+                    VStack(alignment: .trailing, spacing: 10.0) {
+                        Text("Notes:")
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                    }
+                        
+                    VStack(alignment: .leading, spacing: 10.0) {
+                        TextField("Add note... ", text: self.$model.formulaOneDriverNote)
+                        .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                 }.padding(.bottom, 10.0)
             }
                 
                 HStack {
-                    Text(disclaimer)
+                    Text(self.disclaimer)
                     .fontWeight(.light)
                     .font(.system(size: 12))
                     .multilineTextAlignment(.center)
                 }
             
-            TextField("Notes: \(notes)", text: $notes)
             }
+        }
         }
     }
