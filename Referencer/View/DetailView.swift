@@ -6,6 +6,11 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
+/**
+ DetailView is what users will see when they click on the the FormulaOneDriver name from the ListView.
+ This includes addition information about the driver career stats.
+*/
+
 import SwiftUI
 struct DetailView: View {
     

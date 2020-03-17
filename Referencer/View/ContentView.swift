@@ -6,6 +6,10 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
+/**
+ContentView is passing the MasterView in to be displayed.
+*/
+
 import SwiftUI
 struct ContentView: View {
     
@@ -13,14 +17,5 @@ struct ContentView: View {
     
     var body: some View {
             MasterView(viewModel: viewModel)
-        }
     }
-
-// ContentView using ListView to display data with the in-built simulator
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView(viewModel: [
-//        FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431)
-//        ])
-//    }
-//}
+}

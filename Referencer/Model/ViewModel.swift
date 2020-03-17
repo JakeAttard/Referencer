@@ -6,6 +6,10 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
+/**
+ ViewModel is a model 
+*/
+
 import Foundation
 
 class ViewModel: ObservableObject, Identifiable {

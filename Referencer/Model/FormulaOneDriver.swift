@@ -1,10 +1,15 @@
-/**
 //  Driver.swift
 //  Referencer
 //
 //  Created by Jake Attard on 2/3/20.
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
+
+/**
+ FormulaOneDriver Class with key properties created to display a racing driver Formula One career stats these include driver:
+ image, name, nationality, team, championships, racestarts, racewins, podiums, polepositions, fatestlaps, lapscompleted & career points.
+ 
+ A published variable has been created so users can add personal notes about their favourite drivers.
 */
 import Foundation
 
@@ -36,10 +41,11 @@ class FormulaOneDriver: ObservableObject, Identifiable {
     // Formula One Driver Career Points
     let formulaOneDriverCareerPoints: Int
     
-    // FOrmula One Driver Note
+    // Formula One Driver Note
     @Published var formulaOneDriverNote: String = ""
     
     init(formulaOneDriverImage: String, formulaOneDriverName: String, formulaOneDriverNationality: String, formulaOneDriverTeam: String, formulaOneDriverChampionships: Int, formulaOneDriverRaceStarts: Int, formulaOneDriverRaceWins: Int, formulaOneDriverPodiums: Int, formulaOneDriverPolePositions: Int, formulaOneDriverFastestLaps: Int, formulaOneDriverLapsCompleted: Int, formulaOneDriverCareerPoints: Int) {
+        
         self.formulaOneDriverImage = formulaOneDriverImage
         self.formulaOneDriverName = formulaOneDriverName
         self.formulaOneDriverNationality = formulaOneDriverNationality

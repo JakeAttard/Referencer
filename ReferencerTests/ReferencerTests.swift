@@ -6,6 +6,11 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
+/**
+ Testing the application Class properties with XCTAssertNotNill, XCTAssert and XCTAssertEqual.
+ Also testing the FormulaOneDriver Array.
+*/
+
 import XCTest
 @testable import Referencer
 
@@ -13,6 +18,7 @@ class ReferencerTests: XCTestCase {
     
     var formulaOneDriver: FormulaOneDriver?
 
+    // Setup function
     override func setUp() {
         formulaOneDriver = FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431)
     }

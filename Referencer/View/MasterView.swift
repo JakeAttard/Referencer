@@ -6,6 +6,11 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
+/**
+ MasterView is the first view users will see when they load up the Referencer application.
+ This includes the NavigationView with a List showing the Formula One Driver Image, Name and Team they drive for.
+*/
+
 import SwiftUI
 
 struct MasterView: View {
