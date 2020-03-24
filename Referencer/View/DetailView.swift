@@ -15,19 +15,6 @@ import SwiftUI
 struct DetailView: View {
     
     @ObservedObject var model: FormulaOneDriver
-    
-    // Variables for the labels used to help display data
-    let country = "Country:"
-    let currentTeam = "Current Team:"
-    let championships = "Titles:"
-    let raceWins = "Race Wins:"
-    let podiums = "Podiums:"
-    let polePositions = "Pole Positions:"
-    let raceStarts = "Race Starts:"
-    let fastestLaps = "Fastest Laps:"
-    let lapsCompleted = "Laps Completed:"
-    let careerPoints = "Career Points:"
-    let disclaimer = "Disclaimer: Images taken from formula1.com website."
     @State public var notes: String = ""
     
     var body: some View {
@@ -53,51 +40,51 @@ struct DetailView: View {
                 HStack {
                     // Text Labels positioned on the left
                     VStack(alignment: .trailing, spacing: 10.0) {
-                        Text(self.country)
+                        Text("Country:")
                             .fontWeight(.regular).italic()
                             .multilineTextAlignment(.center)
                             .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.currentTeam)
+                        Text("Current Team:")
                             .fontWeight(.bold)
                             .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.championships)
+                        Text("Titles:")
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.raceWins)
+                        Text("Race Wins:")
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.podiums)
+                        Text("Podiums:")
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.polePositions)
+                        Text("Pole Positions:")
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.raceStarts)
+                        Text("Race Starts:")
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.fastestLaps)
+                        Text("Fastest Laps:")
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.lapsCompleted)
+                        Text("Laps Completed:")
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text(self.careerPoints)
+                        Text("Career Points:")
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
@@ -174,7 +161,7 @@ struct DetailView: View {
             }
                 
                 HStack {
-                    Text(self.disclaimer)
+                    Text("Disclaimer: Images taken from formula1.com website.")
                     .fontWeight(.light)
                     .font(.system(size: 12))
                     .multilineTextAlignment(.center)
