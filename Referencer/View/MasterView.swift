@@ -29,7 +29,7 @@ struct MasterView: View {
                         Text(formulaOneDriver.formulaOneDriverName)
                         Text(formulaOneDriver.formulaOneDriverTeam).fontWeight(.light).italic().padding(.leading).frame(maxWidth: .infinity, alignment: .trailing)
                     }
-                }.navigationBarTitle(Text("Formula 1 Driver Stats"), displayMode: .inline)
+                }.navigationBarTitle(Text(self.viewModel.listTitle), displayMode: .inline)
             }
         }
     }

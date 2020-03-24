@@ -13,9 +13,11 @@
 import Foundation
 
 class ViewModel: ObservableObject, Identifiable {
+    let listTitle: String
     @Published var formulaOneDrivers: [FormulaOneDriver]
     
-    init(formulaOneDrivers: [FormulaOneDriver]) {
+    init(listTitle: String, formulaOneDrivers: [FormulaOneDriver]) {
+        self.listTitle = listTitle
         self.formulaOneDrivers = formulaOneDrivers
     }
 }

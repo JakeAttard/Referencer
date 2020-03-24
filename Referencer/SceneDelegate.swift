@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        let contentView = MasterView(viewModel: ViewModel(formulaOneDrivers: [
+        let contentView = ContentView(viewModel: ViewModel(listTitle: "Formula One Drivers", formulaOneDrivers: [
                     
             // Formula One Drivers
                     
