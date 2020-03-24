@@ -16,6 +16,12 @@ class ViewModel: ObservableObject, Identifiable {
     let listTitle: String
     @Published var formulaOneDrivers: [FormulaOneDriver]
     
+    /**
+    - Parameters:
+       - listTitle: Declaring the listTitle
+       - formulaOneDrivers: FormulaOneDriver Array
+    */
+    
     init(listTitle: String, formulaOneDrivers: [FormulaOneDriver]) {
         self.listTitle = listTitle
         self.formulaOneDrivers = formulaOneDrivers
