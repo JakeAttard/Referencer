@@ -122,6 +122,8 @@ class ReferencerTests: XCTestCase {
         let formulaOneDriver: [FormulaOneDriver] = [FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431)]
 
         XCTAssert((formulaOneDriver as Any) is [FormulaOneDriver])
+        
+        XCTAssertEqual(formulaOneDriver.count, 1)
     }
 
     func testPerformanceExample() {
