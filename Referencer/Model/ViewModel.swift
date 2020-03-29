@@ -22,6 +22,14 @@ class ViewModel: ObservableObject, Identifiable {
        - formulaOneDrivers: FormulaOneDriver Array
     */
     
+    func add() {
+        formulaOneDrivers.insert(FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverNationality: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverRaceStarts: 0, formulaOneDriverRaceWins: 0, formulaOneDriverPodiums: 0, formulaOneDriverPolePositions: 0, formulaOneDriverFastestLaps: 0, formulaOneDriverLapsCompleted: 0, formulaOneDriverCareerPoints: 0), at: 0)
+    }
+    
+    func remove(index: Int) {
+        formulaOneDrivers.remove(at: index)
+    }
+    
     init(listTitle: String, formulaOneDrivers: [FormulaOneDriver]) {
         self.listTitle = listTitle
         self.formulaOneDrivers = formulaOneDrivers

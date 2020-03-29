@@ -16,6 +16,19 @@ struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
+        NavigationView {
             MasterView(viewModel: viewModel)
+                .navigationBarTitle(Text(self.viewModel.listTitle), displayMode: .inline)
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing: Button(
+                        action: {
+                            withAnimation { self.viewModel.add() }
+                        }
+                        
+                    ) {
+                    Image(systemName: "plus")
+                    })
+        }
     }
 }

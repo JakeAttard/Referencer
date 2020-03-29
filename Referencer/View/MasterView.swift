@@ -20,6 +20,18 @@ struct MasterView: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        ListView(viewModel: viewModel)
+        List {
+            ForEach(viewModel.formulaOneDrivers) { formulaOneDriver in
+                NavigationLink(destination: DetailView(model: formulaOneDriver)) {
+                    Section {
+                        Image(formulaOneDriver.formulaOneDriverImage).resizable().frame(width: 50, height: 50).clipShape(Circle()).shadow(radius: 10).scaledToFit()
+                        Text(formulaOneDriver.formulaOneDriverName)
+                        Text(formulaOneDriver.formulaOneDriverTeam).fontWeight(.light).italic().padding(.leading).frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                }
+            }.onDelete { indices in
+            indices.forEach { self.viewModel.remove(index: $0) }
+            }
+        }
     }
 }
