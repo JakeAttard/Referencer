@@ -15,6 +15,7 @@ import SwiftUI
 struct DetailView: View {
     
     @ObservedObject var model: FormulaOneDriver
+     @ObservedObject var viewModel: ViewModel
     @State public var notes: String = ""
     
     var body: some View {
@@ -40,51 +41,51 @@ struct DetailView: View {
                 HStack {
                     // Text Labels positioned on the left
                     VStack(alignment: .trailing, spacing: 10.0) {
-                        Text("Country:")
+                        Text(ViewModel.country)
                             .fontWeight(.regular).italic()
                             .multilineTextAlignment(.center)
                             .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Current Team:")
+                        Text(ViewModel.currentTeam)
                             .fontWeight(.bold)
                             .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Titles:")
+                        Text(ViewModel.titles)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Race Wins:")
+                        Text(ViewModel.raceWins)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Podiums:")
+                        Text(ViewModel.podiums)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Pole Positions:")
+                        Text(ViewModel.polePositions)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Race Starts:")
+                        Text(ViewModel.raceStarts)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Fastest Laps:")
+                        Text(ViewModel.fastestLaps)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Laps Completed:")
+                        Text(ViewModel.lapsCompleted)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
-                        Text("Career Points:")
+                        Text(ViewModel.careerPoints)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
@@ -147,21 +148,21 @@ struct DetailView: View {
                 
                 HStack {
                     VStack(alignment: .trailing, spacing: 10.0) {
-                        Text("Notes:")
+                        Text(ViewModel.notes)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                     }
                         
                     VStack(alignment: .leading, spacing: 10.0) {
-                        TextField("Add note... ", text: self.$model.formulaOneDriverNote)
+                        TextField(ViewModel.addNotes, text: self.$model.formulaOneDriverNote)
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                 }.padding(.bottom, 10.0)
             }
                 
                 HStack {
-                    Text("Disclaimer: Images taken from formula1.com website.")
+                    Text(ViewModel.disclaimer)
                     .fontWeight(.light)
                     .font(.system(size: 12))
                     .multilineTextAlignment(.center)

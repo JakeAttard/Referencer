@@ -22,7 +22,7 @@ struct MasterView: View {
     var body: some View {
         List {
             ForEach(viewModel.formulaOneDrivers) { formulaOneDriver in
-                NavigationLink(destination: DetailView(model: formulaOneDriver)) {
+                NavigationLink(destination: DetailView(model: formulaOneDriver, viewModel: self.viewModel)) {
                     Section {
                         Image(formulaOneDriver.formulaOneDriverImage).resizable().frame(width: 50, height: 50).clipShape(Circle()).shadow(radius: 10).scaledToFit()
                         Text(formulaOneDriver.formulaOneDriverName)
@@ -30,7 +30,7 @@ struct MasterView: View {
                     }
                 }
             }.onDelete { indices in
-            indices.forEach { self.viewModel.remove(index: $0) }
+                indices.forEach { self.viewModel.remove(index: $0) }
             }
         }
     }

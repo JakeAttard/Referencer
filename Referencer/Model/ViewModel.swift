@@ -13,7 +13,35 @@
 import Foundation
 
 class ViewModel: ObservableObject, Identifiable {
-    let listTitle: String
+    static var listTitle: String = "Formula One Drivers"
+    
+    static var country: String = "Country:"
+    
+    static var currentTeam: String = "Current Team:"
+    
+    static var titles: String = "Titles:"
+    
+    static var raceWins: String = "Race Wins:"
+    
+    static var podiums: String = "Podiums:"
+    
+    static var polePositions: String = "Pole Positions:"
+    
+    static var raceStarts: String = "Race Starts:"
+    
+    static var fastestLaps: String = "Fastest Laps:"
+    
+    static var lapsCompleted: String = "Laps Completed:"
+    
+    static var careerPoints: String = "Career Points:"
+    
+    static var notes: String = "Notes:"
+    
+    static var addNotes: String = "Add note..."
+    
+    static var disclaimer: String = "Disclaimer: Images taken from formula1.com website."
+    
+    
     @Published var formulaOneDrivers: [FormulaOneDriver]
     
     /**
@@ -31,7 +59,6 @@ class ViewModel: ObservableObject, Identifiable {
     }
     
     init(listTitle: String, formulaOneDrivers: [FormulaOneDriver]) {
-        self.listTitle = listTitle
         self.formulaOneDrivers = formulaOneDrivers
     }
 }
