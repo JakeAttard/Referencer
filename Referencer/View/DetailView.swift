@@ -15,7 +15,7 @@ import SwiftUI
 struct DetailView: View {
     
     @ObservedObject var model: FormulaOneDriver
-     @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel: ViewModel
     @State public var notes: String = ""
     
     var body: some View {
@@ -91,56 +91,47 @@ struct DetailView: View {
                         .frame(width: geometry.size.width / 2, alignment: .trailing)
                     }
                     
-                    // Text Labels positioned on the right
+                    /// TextField Labels positioned on the right
                     VStack(alignment: .leading, spacing: 10.0) {
-                        Text(self.model.formulaOneDriverNationality)
-                        .fontWeight(.regular).italic()
-                        .multilineTextAlignment(.center)
+                        
+                        /// TextField for formulaOneDriverNationality
+                        TextField("Nationality", text: self.$model.formulaOneDriverNationality)
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(self.model.formulaOneDriverTeam)
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverTeam
+                        TextField("Team Name", text: self.$model.formulaOneDriverTeam)
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(self.model.formulaOneDriverChampionships))
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverChampionships
+                        TextField("Number of Championships Won", value: self.$model.formulaOneDriverChampionships, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(self.model.formulaOneDriverRaceWins))
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverRaceWins
+                        TextField("Number of Races Won", value: self.$model.formulaOneDriverRaceWins, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(self.model.formulaOneDriverPodiums))
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverPodiums
+                        TextField("Number of Podiums", value: self.$model.formulaOneDriverPodiums, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(self.model.formulaOneDriverPolePositions))
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverPolePositions
+                        TextField("Number of Pole Positions", value: self.$model.formulaOneDriverPolePositions, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(self.model.formulaOneDriverRaceStarts))
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverRaceStarts
+                        TextField("Number of Race Starts", value: self.$model.formulaOneDriverRaceStarts, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(self.model.formulaOneDriverFastestLaps))
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverFastestLaps
+                        TextField("Number of Fastest Laps", value: self.$model.formulaOneDriverFastestLaps, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(self.model.formulaOneDriverLapsCompleted))
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverLapsCompleted
+                        TextField("Number of Laps Completed", value: self.$model.formulaOneDriverLapsCompleted, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
-                        Text(String(self.model.formulaOneDriverCareerPoints))
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
+                        /// TextField for formulaOneDriverCareerPoints
+                        TextField("Number of Career Points", value: self.$model.formulaOneDriverCareerPoints, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                     

@@ -15,40 +15,40 @@ import Foundation
 class FormulaOneDriver: ObservableObject, Identifiable {
     
     /// Formula One Driver Image
-    let formulaOneDriverImage: String
+    var formulaOneDriverImage: String
     
     /// Formula One Driver Name
-    let formulaOneDriverName: String
+    var formulaOneDriverName: String
     
     /// Formula One Driver Nationality
-    let formulaOneDriverNationality: String
+    var formulaOneDriverNationality: String
     
     /// Formula One Driver Team
-    let formulaOneDriverTeam: String
+    var formulaOneDriverTeam: String
     
     /// Formula One Driver Championships
-    let formulaOneDriverChampionships: Int
+    var formulaOneDriverChampionships: Int
     
     /// Formula One Driver Race Starts
-    let formulaOneDriverRaceStarts: Int
+    var formulaOneDriverRaceStarts: Int
     
     /// Formula One Driver Race Wins
-    let formulaOneDriverRaceWins: Int
+    var formulaOneDriverRaceWins: Int
     
     /// Formula One Driver Podiums
-    let formulaOneDriverPodiums: Int
+    var formulaOneDriverPodiums: Int
     
     /// Formula One Driver Pole Positions
-    let formulaOneDriverPolePositions: Int
+    var formulaOneDriverPolePositions: Int
     
     /// Formula One Driver Fastest Laps
-    let formulaOneDriverFastestLaps: Int
+    var formulaOneDriverFastestLaps: Int
     
     /// Formula One Driver Laps Completed
-    let formulaOneDriverLapsCompleted: Int
+    var formulaOneDriverLapsCompleted: Int
     
     /// Formula One Driver Career Points
-    let formulaOneDriverCareerPoints: Int
+    var formulaOneDriverCareerPoints: Int
     
     /// Formula One Driver Note
     @Published var formulaOneDriverNote: String = ""
