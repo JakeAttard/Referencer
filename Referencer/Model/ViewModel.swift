@@ -16,6 +16,8 @@ class ViewModel: ObservableObject, Identifiable {
     
     static var listTitle: String = "Formula One Drivers"
     
+    static var driveName: String = "Name:"
+    
     static var image: String = "Image URL:"
     
     static var imageUrlPlaceholder: String = "Formula One Driver Profile URL"

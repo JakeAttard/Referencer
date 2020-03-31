@@ -32,30 +32,19 @@ struct DetailView: View {
                     .clipShape(Circle())
                     .shadow(radius: 10)
                     .scaledToFit()
-                
-                Text(self.model.formulaOneDriverName)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .font(.title)
                     .padding(.bottom, 10.0)
                 
                 HStack {
                     VStack(alignment: .trailing, spacing: 10.0) {
+                        
+                        Text(ViewModel.driveName)
+                            .fontWeight(.bold)
+                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                        
                         Text(ViewModel.image)
                             .fontWeight(.bold)
                             .frame(width: geometry.size.width / 2, alignment: .trailing)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 10.0) {
-                        TextField("", text: self.$url) {
-                            self.model.updateImage(imageURL: self.url)
-                        }.frame(width: geometry.size.width / 2, alignment: .leading)
-                    }
-                }
-                
-                HStack {
-                    // Text Labels positioned on the left
-                    VStack(alignment: .trailing, spacing: 10.0) {
+                        
                         Text(ViewModel.country)
                             .fontWeight(.regular).italic()
                             .multilineTextAlignment(.center)
@@ -66,24 +55,66 @@ struct DetailView: View {
                             .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
                         Text(ViewModel.titles)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
                         Text(ViewModel.raceWins)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
                         Text(ViewModel.podiums)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .frame(width: geometry.size.width / 2, alignment: .trailing)
                         
                         Text(ViewModel.polePositions)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 10.0) {
+                        
+                        TextField("Driver Name", text:  self.$model.formulaOneDriverName)
+                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                        
+                        TextField("Image URL", text: self.$url) {
+                            self.model.updateImage(imageURL: self.url)
+                        }.frame(width: geometry.size.width / 2, alignment: .leading)
+                            
+                        
+                        /// TextField for formulaOneDriverNationality
+                        TextField("Nationality", text: self.$model.formulaOneDriverNationality)
+                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                        
+                        /// TextField for formulaOneDriverTeam
+                        TextField("Team Name", text: self.$model.formulaOneDriverTeam)
+                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                        
+                        /// TextField for formulaOneDriverChampionships
+                        TextField("Number of Championships Won", value: self.$model.formulaOneDriverChampionships, formatter: NumberFormatter())
+                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                        
+                        /// TextField for formulaOneDriverRaceWins
+                        TextField("Number of Races Won", value: self.$model.formulaOneDriverRaceWins, formatter: NumberFormatter())
+                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                        
+                        /// TextField for formulaOneDriverPodiums
+                        TextField("Number of Podiums", value: self.$model.formulaOneDriverPodiums, formatter: NumberFormatter())
+                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                        
+                        /// TextField for formulaOneDriverPolePositions
+                        TextField("Number of Pole Positions", value: self.$model.formulaOneDriverPolePositions, formatter: NumberFormatter())
+                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                    }
+                }
+                
+                HStack {
+                    
+                    // Text Labels positioned on the left
+                    VStack(alignment: .trailing, spacing: 10.0) {
                         
                         Text(ViewModel.raceStarts)
                         .fontWeight(.bold)
@@ -109,30 +140,6 @@ struct DetailView: View {
                     /// TextField Labels positioned on the right
                     VStack(alignment: .leading, spacing: 10.0) {
                         
-                        /// TextField for formulaOneDriverNationality
-                        TextField("Nationality", text: self.$model.formulaOneDriverNationality)
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
-                        
-                        /// TextField for formulaOneDriverTeam
-                        TextField("Team Name", text: self.$model.formulaOneDriverTeam)
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
-                        
-                        /// TextField for formulaOneDriverChampionships
-                        TextField("Number of Championships Won", value: self.$model.formulaOneDriverChampionships, formatter: NumberFormatter())
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
-                        
-                        /// TextField for formulaOneDriverRaceWins
-                        TextField("Number of Races Won", value: self.$model.formulaOneDriverRaceWins, formatter: NumberFormatter())
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
-                        
-                        /// TextField for formulaOneDriverPodiums
-                        TextField("Number of Podiums", value: self.$model.formulaOneDriverPodiums, formatter: NumberFormatter())
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
-                        
-                        /// TextField for formulaOneDriverPolePositions
-                        TextField("Number of Pole Positions", value: self.$model.formulaOneDriverPolePositions, formatter: NumberFormatter())
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
-                        
                         /// TextField for formulaOneDriverRaceStarts
                         TextField("Number of Race Starts", value: self.$model.formulaOneDriverRaceStarts, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
@@ -150,7 +157,7 @@ struct DetailView: View {
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                     
-                }.padding(.bottom, 10.0)
+                }
                 
                 HStack {
                     VStack(alignment: .trailing, spacing: 10.0) {
@@ -176,5 +183,5 @@ struct DetailView: View {
             
             }
         }
-        }
     }
+}
