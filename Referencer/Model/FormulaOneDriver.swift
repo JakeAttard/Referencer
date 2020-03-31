@@ -18,13 +18,13 @@ class FormulaOneDriver: ObservableObject, Identifiable {
     var formulaOneDriverImage: String
     
     /// Formula One Driver Name
-    var formulaOneDriverName: String
+    @Published var formulaOneDriverName: String
     
     /// Formula One Driver Nationality
     var formulaOneDriverNationality: String
     
     /// Formula One Driver Team
-    var formulaOneDriverTeam: String
+    @Published var formulaOneDriverTeam: String
     
     /// Formula One Driver Championships
     var formulaOneDriverChampionships: Int
