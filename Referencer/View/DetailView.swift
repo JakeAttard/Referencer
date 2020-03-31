@@ -77,7 +77,7 @@ struct DetailView: View {
                     
                     VStack(alignment: .leading, spacing: 10.0) {
                         
-                        TextField("Driver Name", text:  self.$model.formulaOneDriverName)
+                        TextField(ViewModel.driverNamePlaceholder, text:  self.$model.formulaOneDriverName)
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         TextField("Image URL", text: self.$url) {
@@ -86,27 +86,27 @@ struct DetailView: View {
                             
                         
                         /// TextField for formulaOneDriverNationality
-                        TextField("Nationality", text: self.$model.formulaOneDriverNationality)
+                        TextField(ViewModel.countryPlaceholder, text: self.$model.formulaOneDriverNationality)
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         /// TextField for formulaOneDriverTeam
-                        TextField("Team Name", text: self.$model.formulaOneDriverTeam)
+                        TextField(ViewModel.currentTeamPlaceholder, text: self.$model.formulaOneDriverTeam)
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         /// TextField for formulaOneDriverChampionships
-                        TextField("Number of Championships Won", value: self.$model.formulaOneDriverChampionships, formatter: NumberFormatter())
+                        TextField(ViewModel.titlesPlaceholder, value: self.$model.formulaOneDriverChampionships, formatter: NumberFormatter())
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         /// TextField for formulaOneDriverRaceWins
-                        TextField("Number of Races Won", value: self.$model.formulaOneDriverRaceWins, formatter: NumberFormatter())
+                        TextField(ViewModel.raceWinsPlaceholder, value: self.$model.formulaOneDriverRaceWins, formatter: NumberFormatter())
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         /// TextField for formulaOneDriverPodiums
-                        TextField("Number of Podiums", value: self.$model.formulaOneDriverPodiums, formatter: NumberFormatter())
+                        TextField(ViewModel.podiumsPlaceholder, value: self.$model.formulaOneDriverPodiums, formatter: NumberFormatter())
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         /// TextField for formulaOneDriverPolePositions
-                        TextField("Number of Pole Positions", value: self.$model.formulaOneDriverPolePositions, formatter: NumberFormatter())
+                        TextField(ViewModel.polePositionsPlaceholder, value: self.$model.formulaOneDriverPolePositions, formatter: NumberFormatter())
                             .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                 }
@@ -141,19 +141,19 @@ struct DetailView: View {
                     VStack(alignment: .leading, spacing: 10.0) {
                         
                         /// TextField for formulaOneDriverRaceStarts
-                        TextField("Number of Race Starts", value: self.$model.formulaOneDriverRaceStarts, formatter: NumberFormatter())
+                        TextField(ViewModel.raceStartsPlaceholder, value: self.$model.formulaOneDriverRaceStarts, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         /// TextField for formulaOneDriverFastestLaps
-                        TextField("Number of Fastest Laps", value: self.$model.formulaOneDriverFastestLaps, formatter: NumberFormatter())
+                        TextField(ViewModel.fastestLapsPlaceholder, value: self.$model.formulaOneDriverFastestLaps, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         /// TextField for formulaOneDriverLapsCompleted
-                        TextField("Number of Laps Completed", value: self.$model.formulaOneDriverLapsCompleted, formatter: NumberFormatter())
+                        TextField(ViewModel.lapsCompletedPlaceholder, value: self.$model.formulaOneDriverLapsCompleted, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                         
                         /// TextField for formulaOneDriverCareerPoints
-                        TextField("Number of Career Points", value: self.$model.formulaOneDriverCareerPoints, formatter: NumberFormatter())
+                        TextField(ViewModel.careerPointsPlaceholder, value: self.$model.formulaOneDriverCareerPoints, formatter: NumberFormatter())
                         .frame(width: geometry.size.width / 2, alignment: .leading)
                     }
                     

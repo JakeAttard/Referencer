@@ -18,29 +18,51 @@ class ViewModel: ObservableObject, Identifiable {
     
     static var driveName: String = "Name:"
     
+    static var driverNamePlaceholder: String = "Driver Name"
+    
     static var image: String = "Image URL:"
     
     static var imageUrlPlaceholder: String = "Formula One Driver Profile URL"
     
     static var country: String = "Country:"
     
+    static var countryPlaceholder: String = "Add Country"
+    
     static var currentTeam: String = "Current Team:"
+    
+    static var currentTeamPlaceholder: String = "Add Current Team:"
     
     static var titles: String = "Titles:"
     
+    static var titlesPlaceholder: String = "Number of Titles Won"
+    
     static var raceWins: String = "Race Wins:"
+    
+    static var raceWinsPlaceholder: String = "Number of Races Won"
     
     static var podiums: String = "Podiums:"
     
+    static var podiumsPlaceholder: String = "Number of Podiums"
+    
     static var polePositions: String = "Pole Positions:"
+    
+    static var polePositionsPlaceholder: String = "Number of Poles"
     
     static var raceStarts: String = "Race Starts:"
     
+    static var raceStartsPlaceholder: String = "Number of Race Starts"
+    
     static var fastestLaps: String = "Fastest Laps:"
+    
+    static var fastestLapsPlaceholder: String = "Number of Fastest Laps"
     
     static var lapsCompleted: String = "Laps Completed:"
     
+    static var lapsCompletedPlaceholder: String = "Number of Laps Completed"
+    
     static var careerPoints: String = "Career Points:"
+    
+    static var careerPointsPlaceholder: String = "Number of Career Points"
     
     static var notes: String = "Notes:"
     
