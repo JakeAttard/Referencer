@@ -24,9 +24,7 @@ struct MasterView: View {
             ForEach(viewModel.formulaOneDrivers) { formulaOneDriver in
                 NavigationLink(destination: DetailView(model: formulaOneDriver, viewModel: self.viewModel)) {
                     Section {
-                        Image(formulaOneDriver.formulaOneDriverImage).resizable().frame(width: 50, height: 50).clipShape(Circle()).shadow(radius: 10).scaledToFit()
-                        Text(formulaOneDriver.formulaOneDriverName)
-                        Text(formulaOneDriver.formulaOneDriverTeam).fontWeight(.light).italic().padding(.leading).frame(maxWidth: .infinity, alignment: .trailing)
+                        RowView(model: formulaOneDriver)
                     }
                 }
             }.onDelete { indices in

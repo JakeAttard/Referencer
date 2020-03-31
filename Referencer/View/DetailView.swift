@@ -28,7 +28,7 @@ struct DetailView: View {
                 
                 self.model.getImage()
                     .resizable()
-                    .frame(width: 300.0, height: 300.0)
+                    .frame(width: 200.0, height: 200.0)
                     .clipShape(Circle())
                     .shadow(radius: 10)
                     .scaledToFit()
