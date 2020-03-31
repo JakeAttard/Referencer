@@ -13,7 +13,12 @@
 import Foundation
 
 class ViewModel: ObservableObject, Identifiable {
+    
     static var listTitle: String = "Formula One Drivers"
+    
+    static var image: String = "Image URL:"
+    
+    static var imageUrlPlaceholder: String = "Formula One Driver Profile URL"
     
     static var country: String = "Country:"
     
@@ -41,7 +46,6 @@ class ViewModel: ObservableObject, Identifiable {
     
     static var disclaimer: String = "Disclaimer: Images taken from formula1.com website."
     
-    
     @Published var formulaOneDrivers: [FormulaOneDriver]
     
     /**
@@ -57,6 +61,8 @@ class ViewModel: ObservableObject, Identifiable {
     func remove(index: Int) {
         formulaOneDrivers.remove(at: index)
     }
+    
+    
     
     init(listTitle: String, formulaOneDrivers: [FormulaOneDriver]) {
         self.formulaOneDrivers = formulaOneDrivers

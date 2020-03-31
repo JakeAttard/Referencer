@@ -5,7 +5,7 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 /**
  FormulaOneDriver Class with key properties created to display a racing driver Formula One career stats these include driver:
@@ -53,6 +53,8 @@ class FormulaOneDriver: ObservableObject, Identifiable {
     /// Formula One Driver Note
     @Published var formulaOneDriverNote: String = ""
     
+    @Published var formulaOneDriverUIImage: UIImage?
+    
     /**
      - Parameters:
         - formulaOneDriverImage: The driver image (String)
@@ -83,5 +85,25 @@ class FormulaOneDriver: ObservableObject, Identifiable {
         self.formulaOneDriverFastestLaps = formulaOneDriverFastestLaps
         self.formulaOneDriverLapsCompleted = formulaOneDriverLapsCompleted
         self.formulaOneDriverCareerPoints = formulaOneDriverCareerPoints
+    }
+    
+    func updateImage(imageURL: String) {
+        
+        guard let url = URL(string: imageURL),
+            let imageData = try? Data(contentsOf: url),
+            let formulaOneDriverUIImage = UIImage(data: imageData) else {
+                self.formulaOneDriverUIImage = nil
+                return
+        }
+        
+        self.formulaOneDriverUIImage = formulaOneDriverUIImage
+    }
+    
+    func getImage() -> Image {
+        if let formulaOneDriverUIImage = formulaOneDriverUIImage{
+            return Image(uiImage: formulaOneDriverUIImage)
+        } else {
+            return Image(formulaOneDriverImage)
+        }
     }
 }

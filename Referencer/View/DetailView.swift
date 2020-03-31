@@ -16,6 +16,7 @@ struct DetailView: View {
     
     @ObservedObject var model: FormulaOneDriver
     @ObservedObject var viewModel: ViewModel
+    @State var url: String = ""
     @State public var notes: String = ""
     
     var body: some View {
@@ -24,19 +25,33 @@ struct DetailView: View {
         
         VStack {
             Group {
-                Image(self.model.formulaOneDriverImage)
+                
+                self.model.getImage()
                     .resizable()
                     .frame(width: 300.0, height: 300.0)
                     .clipShape(Circle())
                     .shadow(radius: 10)
                     .scaledToFit()
-
                 
                 Text(self.model.formulaOneDriverName)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .font(.title)
                     .padding(.bottom, 10.0)
+                
+                HStack {
+                    VStack(alignment: .trailing, spacing: 10.0) {
+                        Text(ViewModel.image)
+                            .fontWeight(.bold)
+                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 10.0) {
+                        TextField("", text: self.$url) {
+                            self.model.updateImage(imageURL: self.url)
+                        }.frame(width: geometry.size.width / 2, alignment: .leading)
+                    }
+                }
                 
                 HStack {
                     // Text Labels positioned on the left
