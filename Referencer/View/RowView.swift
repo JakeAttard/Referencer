@@ -16,9 +16,22 @@ struct RowView: View {
     var body: some View {
         
         HStack {
-            self.model.getImage().resizable().frame(width: 50, height: 50).clipShape(Circle()).shadow(radius: 10).scaledToFit()
+            /// Formula One Driver Image
+            self.model.getFormulaOneDriverImage()
+                .resizable()
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+                .shadow(radius: 10).scaledToFit()
+            
+            /// Formula One Driver Name
             Text(model.formulaOneDriverName)
-            Text(model.formulaOneDriverTeam).fontWeight(.light).italic().padding(.leading).frame(maxWidth: .infinity, alignment: .trailing)
+            
+            /// Formula One Driver Team
+            Text(model.formulaOneDriverTeam)
+                .fontWeight(.light)
+                .italic()
+                .padding(.leading)
+                .frame(maxWidth: .infinity, alignment: .trailing)
         }
          
     }

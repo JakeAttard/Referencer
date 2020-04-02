@@ -14,6 +14,8 @@ import Foundation
 
 class ViewModel: ObservableObject, Identifiable {
     
+    /// Static Text and Placeholder information
+    
     static var listTitle: String = "Formula One Drivers"
     
     static var driveName: String = "Name:"
@@ -72,21 +74,20 @@ class ViewModel: ObservableObject, Identifiable {
     
     @Published var formulaOneDrivers: [FormulaOneDriver]
     
-    /**
-    - Parameters:
-       - listTitle: Declaring the listTitle
-       - formulaOneDrivers: FormulaOneDriver Array
-    */
-    
-    func add() {
+    /// Adding in a new Formula One Driver
+    func addFormulaOneDriver() {
         formulaOneDrivers.insert(FormulaOneDriver(formulaOneDriverImage: "", formulaOneDriverName: "", formulaOneDriverNationality: "", formulaOneDriverTeam: "", formulaOneDriverChampionships: 0, formulaOneDriverRaceStarts: 0, formulaOneDriverRaceWins: 0, formulaOneDriverPodiums: 0, formulaOneDriverPolePositions: 0, formulaOneDriverFastestLaps: 0, formulaOneDriverLapsCompleted: 0, formulaOneDriverCareerPoints: 0), at: 0)
     }
     
-    func remove(index: Int) {
+    /// Removing a Formula One Driver
+    func removeFormulaOneDriver(index: Int) {
         formulaOneDrivers.remove(at: index)
     }
     
-    
+    /**
+    - Parameters:
+       - formulaOneDrivers: FormulaOneDriver Array
+    */
     
     init(formulaOneDrivers: [FormulaOneDriver]) {
         self.formulaOneDrivers = formulaOneDrivers

@@ -17,13 +17,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            
+            /// Bringing in MasterView contents
             MasterView(viewModel: viewModel)
                 .navigationBarTitle(Text(ViewModel.listTitle), displayMode: .inline)
                 .navigationBarItems(
                     leading: EditButton(),
                     trailing: Button(
                         action: {
-                            withAnimation { self.viewModel.add() }
+                            withAnimation { self.viewModel.addFormulaOneDriver() }
                         }
                         
                     ) {

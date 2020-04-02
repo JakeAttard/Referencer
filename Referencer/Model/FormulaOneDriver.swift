@@ -53,6 +53,7 @@ class FormulaOneDriver: ObservableObject, Identifiable {
     /// Formula One Driver Note
     @Published var formulaOneDriverNote: String = ""
     
+    /// Formula One Driver Image
     @Published var formulaOneDriverUIImage: UIImage?
     
     /**
@@ -87,7 +88,8 @@ class FormulaOneDriver: ObservableObject, Identifiable {
         self.formulaOneDriverCareerPoints = formulaOneDriverCareerPoints
     }
     
-    func updateImage(imageURL: String) {
+    /// Updating a Formula One Driver Image by passing in a image URL
+    func updateFormulaOneDriverImage(imageURL: String) {
         
         guard let url = URL(string: imageURL),
             let imageData = try? Data(contentsOf: url),
@@ -99,7 +101,8 @@ class FormulaOneDriver: ObservableObject, Identifiable {
         self.formulaOneDriverUIImage = formulaOneDriverUIImage
     }
     
-    func getImage() -> Image {
+    /// Getting the new Formula One Driver Image and adding it to the view
+    func getFormulaOneDriverImage() -> Image {
         if let formulaOneDriverUIImage = formulaOneDriverUIImage{
             return Image(uiImage: formulaOneDriverUIImage)
         } else {

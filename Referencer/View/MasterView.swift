@@ -10,12 +10,12 @@
 
 import SwiftUI
 
+/**
+    MasterView is the first view users will see when they load up the Referencer application.
+    In the Section passing through the RowView file
+*/
+
 struct MasterView: View {
-    
-    /**
-        MasterView is the first view users will see when they load up the Referencer application.
-        Added the ListView.
-    */
     
     @ObservedObject var viewModel: ViewModel
     
@@ -28,7 +28,7 @@ struct MasterView: View {
                     }
                 }
             }.onDelete { indices in
-                indices.forEach { self.viewModel.remove(index: $0) }
+                indices.forEach { self.viewModel.removeFormulaOneDriver(index: $0) }
             }
         }
     }

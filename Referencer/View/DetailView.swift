@@ -6,17 +6,22 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
+import SwiftUI
+
 /**
  DetailView is what users will see when they click on the the FormulaOneDriver name from the ListView.
  This includes addition information about the driver career stats.
 */
 
-import SwiftUI
 struct DetailView: View {
     
     @ObservedObject var model: FormulaOneDriver
     @ObservedObject var viewModel: ViewModel
+    
+    /// url is a empty String for the formulaOneDriverImage
     @State var url: String = ""
+    
+    /// notes is a empty String where users can add additional information about there drivers
     @State public var notes: String = ""
     
     var body: some View {
@@ -24,7 +29,8 @@ struct DetailView: View {
         VStack {
             Group {
                 
-                self.model.getImage()
+                /// Getting the current FormulaOneDriver Image
+                self.model.getFormulaOneDriverImage()
                     .resizable()
                     .frame(width: 200.0, height: 200.0)
                     .clipShape(Circle())
@@ -35,34 +41,42 @@ struct DetailView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
                         
+                        /// Bringing in the Driver Name text from the ViewModel
                         Text(ViewModel.driveName)
                             .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Driver  Image text from the ViewModel
                         Text(ViewModel.image)
                             .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Driver Country text from the ViewModel
                         Text(ViewModel.country)
                             .fontWeight(.regular).italic()
                             .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Current Team text from the ViewModel
                         Text(ViewModel.currentTeam)
                             .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Titles text from the ViewModel
                         Text(ViewModel.titles)
                             .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Race Wins text from the ViewModel
                         Text(ViewModel.raceWins)
                             .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Driver Podiums text from the ViewModel
                         Text(ViewModel.podiums)
                             .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Pole Positions text from the ViewModel
                         Text(ViewModel.polePositions)
                             .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
@@ -70,11 +84,15 @@ struct DetailView: View {
                     
                     VStack {
                         
+                        /// Bringing in the TextField Placeholder for all the TextFields from the ViewModel
+                        
+                        /// TextField for formulaOneDriverName
                         TextField(ViewModel.driverNamePlaceholder, text:  self.$model.formulaOneDriverName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         
+                        /// TextField to updateFormulaOneDriverImage
                         TextField("Image URL", text: self.$url) {
-                            self.model.updateImage(imageURL: self.url)
+                            self.model.updateFormulaOneDriverImage(imageURL: self.url)
                         }
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             
@@ -108,22 +126,27 @@ struct DetailView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 5) {
                         
+                        /// Bringing in the Race Starts text from the ViewModel
                         Text(ViewModel.raceStarts)
                         .fontWeight(.bold)
                          .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Fastest Laps text from the ViewModel
                         Text(ViewModel.fastestLaps)
                         .fontWeight(.bold)
                          .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Laps Completed text from the ViewModel
                         Text(ViewModel.lapsCompleted)
                         .fontWeight(.bold)
                          .frame(maxHeight: .infinity)
                         
+                        /// Bringing in the Career Points text from the ViewModel
                         Text(ViewModel.careerPoints)
                         .fontWeight(.bold)
                          .frame(maxHeight: .infinity)
-                    
+                        
+                        /// Bringing in the Notes text from the ViewModel
                         Text(ViewModel.notes)
                         .fontWeight(.bold)
                          .frame(maxHeight: .infinity)
@@ -159,6 +182,7 @@ struct DetailView: View {
             
                 
             HStack {
+                /// Bringing in the Disclaimer text from the ViewModel
                 Text(ViewModel.disclaimer)
                 .fontWeight(.light)
                 .font(.system(size: 12))

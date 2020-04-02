@@ -11,6 +11,7 @@
  Also testing the FormulaOneDriver Array making sure it isn't empty.
 */
 
+import SwiftUI
 import XCTest
 @testable import Referencer
 
@@ -19,9 +20,10 @@ class ReferencerTests: XCTestCase {
     /// FormulaOneDriver Object
     var formulaOneDriver: FormulaOneDriver?
     
+    /// FormulaOneDrivers Empty Array
     var formulaOneDrivers: [FormulaOneDriver] = []
     
-    /// ViewModel Object
+    /// Object of the ViewModel
     var viewModel: ViewModel?
 
     /// Setup function
@@ -141,22 +143,23 @@ class ReferencerTests: XCTestCase {
         XCTAssertEqual(formulaOneDriver.count, 1)
     }
     
-    /// Testing the viewModel adding and removing listItems
+    /// Testing the viewModel adding and removing formulaOneDrivers
     func testViewModel() {
-        viewModel?.add()
+        viewModel?.addFormulaOneDriver()
         
         XCTAssertEqual(viewModel?.formulaOneDrivers.count, 2)
         
-        viewModel?.remove(index: 0)
+        viewModel?.removeFormulaOneDriver(index: 0)
         
         XCTAssertEqual(viewModel?.formulaOneDrivers.count, 1)
         
+        formulaOneDriver?.updateFormulaOneDriverImage(imageURL: "https://s3-eu-west-1.amazonaws.com/motorsport-magazine/wp-content/uploads/2019/10/02112526/lewis_hamilton_mexico_thursday.jpg")
+        XCTAssert((formulaOneDriver?.getFormulaOneDriverImage as Any) is Image)
     }
     
     /// Testing Image URL
     func updatingImageTest() {
-        let uiImage = formulaOneDriver?.updateImage(imageURL: "https://s3-eu-west-1.amazonaws.com/motorsport-magazine/wp-content/uploads/2019/10/02112526/lewis_hamilton_mexico_thursday.jpg")
-        XCTAssert((uiImage as Any) is UIImage)
+        
     }
 
     func testPerformanceExample() {
