@@ -145,19 +145,22 @@ class ReferencerTests: XCTestCase {
     
     /// Testing the viewModel adding and removing formulaOneDrivers
     func testViewModel() {
+        
+        /// Adding a new FormulaOneDriver
         viewModel?.addFormulaOneDriver()
         
+        /// Checking to see if the count is 2 as one has just been added
         XCTAssertEqual(viewModel?.formulaOneDrivers.count, 2)
         
+        /// Removing the formulaOneDriver
         viewModel?.removeFormulaOneDriver(index: 0)
         
         XCTAssertEqual(viewModel?.formulaOneDrivers.count, 1)
-    }
-    
-    /// Testing Image URL
-    func updatingImageTest() {
+        
+        /// Testing the Image URL by updating it and getting the new image
         formulaOneDriver?.updateFormulaOneDriverImage(imageURL: "https://s3-eu-west-1.amazonaws.com/motorsport-magazine/wp-content/uploads/2019/10/02112526/lewis_hamilton_mexico_thursday.jpg")
-        XCTAssert((formulaOneDriver?.getFormulaOneDriverImage as Any) is Image)
+        XCTAssert((formulaOneDriver?.getFormulaOneDriverImage() as Any) is Image)
+        
     }
 
     func testPerformanceExample() {

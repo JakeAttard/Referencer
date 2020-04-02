@@ -32,7 +32,7 @@ struct DetailView: View {
                 /// Getting the current FormulaOneDriver Image
                 self.model.getFormulaOneDriverImage()
                     .resizable()
-                    .frame(width: 200.0, height: 200.0)
+                    .frame(width: 150.0, height: 150.0)
                     .clipShape(Circle())
                     .shadow(radius: 10)
                     .scaledToFit()
@@ -53,7 +53,7 @@ struct DetailView: View {
                         
                         /// Bringing in the Driver Country text from the ViewModel
                         Text(ViewModel.country)
-                            .fontWeight(.regular).italic()
+                            .fontWeight(.bold)
                             .frame(maxHeight: .infinity)
                         
                         /// Bringing in the Current Team text from the ViewModel
