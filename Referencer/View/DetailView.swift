@@ -21,8 +21,6 @@ struct DetailView: View {
     
     var body: some View {
         
-        GeometryReader { geometry in
-        
         VStack {
             Group {
                 
@@ -35,152 +33,136 @@ struct DetailView: View {
                     .padding(.bottom, 10.0)
                 
                 HStack {
-                    VStack(alignment: .trailing, spacing: 10.0) {
+                    VStack(alignment: .leading, spacing: 5) {
                         
                         Text(ViewModel.driveName)
                             .fontWeight(.bold)
-                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.image)
                             .fontWeight(.bold)
-                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.country)
                             .fontWeight(.regular).italic()
-                            .multilineTextAlignment(.center)
-                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.currentTeam)
                             .fontWeight(.bold)
-                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.titles)
                             .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.raceWins)
                             .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.podiums)
                             .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.polePositions)
                             .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .frame(width: geometry.size.width / 2, alignment: .trailing)
+                            .frame(maxHeight: .infinity)
                     }
                     
-                    VStack(alignment: .leading, spacing: 10.0) {
+                    VStack {
                         
                         TextField(ViewModel.driverNamePlaceholder, text:  self.$model.formulaOneDriverName)
-                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         TextField("Image URL", text: self.$url) {
                             self.model.updateImage(imageURL: self.url)
-                        }.frame(width: geometry.size.width / 2, alignment: .leading)
+                        }
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                             
                         
                         /// TextField for formulaOneDriverNationality
                         TextField(ViewModel.countryPlaceholder, text: self.$model.formulaOneDriverNationality)
-                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverTeam
                         TextField(ViewModel.currentTeamPlaceholder, text: self.$model.formulaOneDriverTeam)
-                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverChampionships
                         TextField(ViewModel.titlesPlaceholder, value: self.$model.formulaOneDriverChampionships, formatter: NumberFormatter())
-                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverRaceWins
                         TextField(ViewModel.raceWinsPlaceholder, value: self.$model.formulaOneDriverRaceWins, formatter: NumberFormatter())
-                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverPodiums
                         TextField(ViewModel.podiumsPlaceholder, value: self.$model.formulaOneDriverPodiums, formatter: NumberFormatter())
-                            .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverPolePositions
                         TextField(ViewModel.polePositionsPlaceholder, value: self.$model.formulaOneDriverPolePositions, formatter: NumberFormatter())
-                            .frame(width: geometry.size.width / 2, alignment: .leading)
-                    }
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }.padding(.leading)
                 }
                 
                 HStack {
-                    
-                    // Text Labels positioned on the left
-                    VStack(alignment: .trailing, spacing: 10.0) {
+                    VStack(alignment: .leading, spacing: 5) {
                         
                         Text(ViewModel.raceStarts)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                         .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.fastestLaps)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                         .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.lapsCompleted)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                         .frame(maxHeight: .infinity)
                         
                         Text(ViewModel.careerPoints)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
+                         .frame(maxHeight: .infinity)
+                    
+                        Text(ViewModel.notes)
+                        .fontWeight(.bold)
+                         .frame(maxHeight: .infinity)
                     }
                     
                     /// TextField Labels positioned on the right
-                    VStack(alignment: .leading, spacing: 10.0) {
+                    VStack {
                         
                         /// TextField for formulaOneDriverRaceStarts
                         TextField(ViewModel.raceStartsPlaceholder, value: self.$model.formulaOneDriverRaceStarts, formatter: NumberFormatter())
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverFastestLaps
                         TextField(ViewModel.fastestLapsPlaceholder, value: self.$model.formulaOneDriverFastestLaps, formatter: NumberFormatter())
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverLapsCompleted
                         TextField(ViewModel.lapsCompletedPlaceholder, value: self.$model.formulaOneDriverLapsCompleted, formatter: NumberFormatter())
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                         /// TextField for formulaOneDriverCareerPoints
                         TextField(ViewModel.careerPointsPlaceholder, value: self.$model.formulaOneDriverCareerPoints, formatter: NumberFormatter())
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
-                    }
-                    
-                }
-                
-                HStack {
-                    VStack(alignment: .trailing, spacing: 10.0) {
-                        Text(ViewModel.notes)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .frame(width: geometry.size.width / 2, alignment: .trailing)
-                    }
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         
-                    VStack(alignment: .leading, spacing: 10.0) {
                         TextField(ViewModel.addNotes, text: self.$model.formulaOneDriverNote)
-                        .frame(width: geometry.size.width / 2, alignment: .leading)
-                    }
-                }.padding(.bottom, 10.0)
-            }
-                
-                HStack {
-                    Text(ViewModel.disclaimer)
-                    .fontWeight(.light)
-                    .font(.system(size: 12))
-                    .multilineTextAlignment(.center)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }.padding(.leading)
                 }
+                
+
+            }.padding(.horizontal)
+                .fixedSize(horizontal: false, vertical: true)
             
+                
+            HStack {
+                Text(ViewModel.disclaimer)
+                .fontWeight(.light)
+                .font(.system(size: 12))
+                .multilineTextAlignment(.center)
             }
         }
     }

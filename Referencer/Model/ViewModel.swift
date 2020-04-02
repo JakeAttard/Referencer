@@ -56,7 +56,7 @@ class ViewModel: ObservableObject, Identifiable {
     
     static var fastestLapsPlaceholder: String = "Number of Fastest Laps"
     
-    static var lapsCompleted: String = "Laps Completed:"
+    static var lapsCompleted: String = "Laps Finished:"
     
     static var lapsCompletedPlaceholder: String = "Number of Laps Completed"
     
@@ -88,7 +88,7 @@ class ViewModel: ObservableObject, Identifiable {
     
     
     
-    init(listTitle: String, formulaOneDrivers: [FormulaOneDriver]) {
+    init(formulaOneDrivers: [FormulaOneDriver]) {
         self.formulaOneDrivers = formulaOneDrivers
     }
 }

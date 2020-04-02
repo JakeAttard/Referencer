@@ -16,11 +16,26 @@ import XCTest
 
 class ReferencerTests: XCTestCase {
     
+    /// FormulaOneDriver Object
     var formulaOneDriver: FormulaOneDriver?
+    
+    var formulaOneDrivers: [FormulaOneDriver] = []
+    
+    /// ViewModel Object
+    var viewModel: ViewModel?
 
     /// Setup function
     override func setUp() {
+        
         formulaOneDriver = FormulaOneDriver(formulaOneDriverImage: "lewishH", formulaOneDriverName: "Lewis Hamilton", formulaOneDriverNationality: "United Kingdom", formulaOneDriverTeam: "Mercedes", formulaOneDriverChampionships: 6, formulaOneDriverRaceStarts: 250, formulaOneDriverRaceWins: 84, formulaOneDriverPodiums: 151, formulaOneDriverPolePositions: 88, formulaOneDriverFastestLaps: 47, formulaOneDriverLapsCompleted: 14216, formulaOneDriverCareerPoints: 3431)
+        
+        guard let formulaOneDriver = formulaOneDriver else {
+            return
+        }
+        
+        formulaOneDrivers = [formulaOneDriver]
+           
+        viewModel = ViewModel(formulaOneDrivers: formulaOneDrivers)
     }
 
     override func tearDown() {
@@ -124,6 +139,24 @@ class ReferencerTests: XCTestCase {
         XCTAssert((formulaOneDriver as Any) is [FormulaOneDriver])
         
         XCTAssertEqual(formulaOneDriver.count, 1)
+    }
+    
+    /// Testing the viewModel adding and removing listItems
+    func testViewModel() {
+        viewModel?.add()
+        
+        XCTAssertEqual(viewModel?.formulaOneDrivers.count, 2)
+        
+        viewModel?.remove(index: 0)
+        
+        XCTAssertEqual(viewModel?.formulaOneDrivers.count, 1)
+        
+    }
+    
+    /// Testing Image URL
+    func updatingImageTest() {
+        let uiImage = formulaOneDriver?.updateImage(imageURL: "https://s3-eu-west-1.amazonaws.com/motorsport-magazine/wp-content/uploads/2019/10/02112526/lewis_hamilton_mexico_thursday.jpg")
+        XCTAssert((uiImage as Any) is UIImage)
     }
 
     func testPerformanceExample() {
