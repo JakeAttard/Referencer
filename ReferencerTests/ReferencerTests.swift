@@ -152,14 +152,12 @@ class ReferencerTests: XCTestCase {
         viewModel?.removeFormulaOneDriver(index: 0)
         
         XCTAssertEqual(viewModel?.formulaOneDrivers.count, 1)
-        
-        formulaOneDriver?.updateFormulaOneDriverImage(imageURL: "https://s3-eu-west-1.amazonaws.com/motorsport-magazine/wp-content/uploads/2019/10/02112526/lewis_hamilton_mexico_thursday.jpg")
-        XCTAssert((formulaOneDriver?.getFormulaOneDriverImage as Any) is Image)
     }
     
     /// Testing Image URL
     func updatingImageTest() {
-        
+        formulaOneDriver?.updateFormulaOneDriverImage(imageURL: "https://s3-eu-west-1.amazonaws.com/motorsport-magazine/wp-content/uploads/2019/10/02112526/lewis_hamilton_mexico_thursday.jpg")
+        XCTAssert((formulaOneDriver?.getFormulaOneDriverImage as Any) is Image)
     }
 
     func testPerformanceExample() {

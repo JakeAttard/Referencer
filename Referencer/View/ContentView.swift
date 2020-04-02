@@ -6,11 +6,12 @@
 //  Copyright © 2020 Jake Attard. All rights reserved.
 //
 
+import SwiftUI
+
 /**
-ContentView is passing the MasterView in to be displayed.
+ContentView is bring in the MasterView in to be displayed.
 */
 
-import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel: ViewModel
